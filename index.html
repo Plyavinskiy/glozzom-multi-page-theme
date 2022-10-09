@@ -16,6 +16,13 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.0/ekko-lightbox.css"
+      integrity="sha512-BVGjJ8Wc+4E8JKyoqnbAdqEnglgKerD/1rMioxpitveJM3hC0MNyuKSVZpb02cUDzERc5tWFSOXmziXylXMv2g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <title>Glozzom Multi Page Theme</title>
   </head>
@@ -243,6 +250,113 @@
       </div>
     </div>
 
+    <!-- PHOTO GALLERY -->
+    <section id="gallery" class="py-5">
+      <div class="container">
+        <h1 class="text-center">Photo Gallery</h1>
+        <p class="text-center">Check out our photos</p>
+        <div class="row mb-4">
+          <div class="col-md-4">
+            <a
+              href="https://source.unsplash.com/random/560x560"
+              data-toggle="lightbox"
+              data-gallery="img-gallery"
+              data-width="560"
+              data-height="560"
+            >
+              <img
+                src="https://source.unsplash.com/random/560x560"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+          </div>
+
+          <div class="col-md-4">
+            <a
+              href="https://source.unsplash.com/random/561x561"
+              data-toggle="lightbox"
+              data-gallery="img-gallery"
+              data-width="561"
+              data-height="561"
+            >
+              <img
+                src="https://source.unsplash.com/random/561x561"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+          </div>
+
+          <div class="col-md-4">
+            <a
+              href="https://source.unsplash.com/random/562x562"
+              data-toggle="lightbox"
+              data-gallery="img-gallery"
+              data-width="562"
+              data-height="562"
+            >
+              <img
+                src="https://source.unsplash.com/random/562x562"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-md-4">
+            <a
+              href="https://source.unsplash.com/random/563x563"
+              data-toggle="lightbox"
+              data-gallery="img-gallery"
+              data-width="563"
+              data-height="563"
+            >
+              <img
+                src="https://source.unsplash.com/random/563x563"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+          </div>
+
+          <div class="col-md-4">
+            <a
+              href="https://source.unsplash.com/random/564x564"
+              data-toggle="lightbox"
+              data-gallery="img-gallery"
+              data-width="564"
+              data-height="564"
+            >
+              <img
+                src="https://source.unsplash.com/random/564x564"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+          </div>
+
+          <div class="col-md-4">
+            <a
+              href="https://source.unsplash.com/random/565x565"
+              data-toggle="lightbox"
+              data-gallery="img-gallery"
+              data-width="565"
+              data-height="565"
+            >
+              <img
+                src="https://source.unsplash.com/random/565x565"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script
       src="https://code.jquery.com/jquery-3.6.1.min.js"
       integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
@@ -258,6 +372,13 @@
       integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.0/ekko-lightbox.min.js"
+      integrity="sha512-A91aOxAVV3f8rcTRk/X47XReRLOKD0gfRQVqmSS0M/ExMbdSCh95TPo4sY7thVoJuMCfd/u2+WkhJydNUB3lUQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <script>
       // Video Play
       $(function () {
@@ -277,6 +398,12 @@
         $("#videoModal").on("hide.bs.modal", function (e) {
           $("#video").attr("src", $videoSrc);
         });
+      });
+
+      // Lightbox Init
+      $(document).on("click", '[data-toggle="lightbox"]', function (event) {
+        event.preventDefault();
+        $(this).ekkoLightbox({ always_show_close: false });
       });
     </script>
   </body>
