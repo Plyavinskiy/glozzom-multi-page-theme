@@ -191,14 +191,57 @@
               suscipit error minus earum ducimus maiores, aliquid delectus?
               Repudiandae, eligendi possimus.
             </p>
-            <a href="about.html" class="btn btn-outline-danger btn-lg">Learn More</a>
+            <a href="about.html" class="btn btn-outline-danger btn-lg"
+              >Learn More</a
+            >
           </div>
           <div class="col-md-6">
-            <img src="img/laptop.png" alt="" class="img-fluid">
+            <img src="img/laptop.png" alt="" class="img-fluid" />
           </div>
         </div>
       </div>
     </section>
+
+    <!-- VIDEO PLAY -->
+    <section id="video-play">
+      <div class="dark-overlay">
+        <div class="row">
+          <div class="col">
+            <div class="container p-5">
+              <a
+                href="#"
+                class="video"
+                data-src="https://www.youtube.com/embed/EV_vT0Vud5Q"
+                data-bs-toggle="modal"
+                data-bs-target="#videoModal"
+              >
+                <i class="fas fa-play fa-3x"></i>
+              </a>
+              <h1>See What We Do</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO MODAL -->
+    <div class="modal fade" id="videoModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button
+              type="button"
+              class="btn-close btn-"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+            <div class="ratio ratio-16x9">
+              <iframe src="" id="video" allow="autoplay"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.6.1.min.js"
@@ -215,6 +258,26 @@
       integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
       crossorigin="anonymous"
     ></script>
-    <script></script>
+    <script>
+      // Video Play
+      $(function () {
+        // Auto play modal video
+        var $videoSrc;
+        $(".video").click(function () {
+          $videoSrc = $(this).data("src");
+        });
+
+        $("#videoModal").on("shown.bs.modal", function (e) {
+          $("#video").attr(
+            "src",
+            $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0"
+          );
+        });
+
+        $("#videoModal").on("hide.bs.modal", function (e) {
+          $("#video").attr("src", $videoSrc);
+        });
+      });
+    </script>
   </body>
 </html>
