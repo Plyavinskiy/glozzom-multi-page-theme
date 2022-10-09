@@ -386,6 +386,17 @@
       </div>
     </section>
 
+    <!-- FOOTER -->
+    <footer id="main-footer" class="text-center py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p>Copyright &copy; <span id="year"></span> Glozzom</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script
       src="https://code.jquery.com/jquery-3.6.1.min.js"
       integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
@@ -434,6 +445,10 @@
         event.preventDefault();
         $(this).ekkoLightbox({ always_show_close: false });
       });
+
+      document
+        .getElementById("year")
+        .appendChild(document.createTextNode(new Date().getFullYear()));
     </script>
   </body>
 </html>
