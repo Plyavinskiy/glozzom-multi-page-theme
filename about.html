@@ -281,17 +281,15 @@
       referrerpolicy="no-referrer"
     ></script>
     <script>
-      <<<<<<< HEAD
-            document
-              .getElementById("year")
-              .appendChild(document.createTextNode(new Date().getFullYear()));
-      =======
-            $(".slider").slick({
-              infinite: true,
-              slideToShow: 1,
-              slideToScroll: 1,
-            });
-      >>>>>>> 70b9967 (feat: implement the testimonials section on the About page)
+      $(".slider").slick({
+        infinite: true,
+        slideToShow: 1,
+        slideToScroll: 1,
+      });
+
+      document
+        .getElementById("year")
+        .appendChild(document.createTextNode(new Date().getFullYear()));
     </script>
   </body>
 </html>
